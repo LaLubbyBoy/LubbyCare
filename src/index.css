@@ -1,0 +1,101 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-brand-green: #064E3B;
+  --color-brand-green-hover: #08614a;
+  --color-brand-gold: #D4AF37;
+  --color-brand-sage: #86A69D;
+  --color-brand-bg: #F9F8F6;
+}
+
+html, body {
+  background-color: #F9F8F6;
+  color: #1c1917;
+  transition: background-color 300ms ease, color 300ms ease;
+}
+
+html.dark, html.dark body {
+  background-color: #121412;
+  color: #f5f5f4;
+}
+
+@layer utilities {
+  .animate-fadeIn {
+    animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .animate-slideDown {
+    animation: slideDown 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .animate-slideUp {
+    animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .animate-slideLeft {
+    animation: slideLeft 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .animate-spin-slow {
+    animation: spin 15s linear infinite;
+  }
+
+  /* Frosted Glass Utilities */
+  .glass-panel {
+    backdrop-filter: blur(24px);
+    background-color: rgba(255, 255, 255, 0.7);
+    border-color: rgba(0, 0, 0, 0.05);
+  }
+  .dark .glass-panel {
+    background-color: rgba(26, 26, 26, 0.7);
+    border-color: rgba(255, 255, 255, 0.05);
+  }
+
+  .glass-card {
+    backdrop-filter: blur(12px);
+    background-color: rgba(255, 255, 255, 0.4);
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+  .dark .glass-card {
+    background-color: rgba(26, 26, 26, 0.4);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .glass-premium {
+    backdrop-filter: blur(40px);
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+  }
+  .dark .glass-premium {
+    background-color: rgba(26, 26, 26, 0.2);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.99); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideLeft {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}

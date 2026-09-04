@@ -1,0 +1,6 @@
+{
+  "name": "LubbyCare",
+  "description": "World-class premium luxury skincare e-commerce website with AI skin analysis, skincare quiz, and custom routines.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
